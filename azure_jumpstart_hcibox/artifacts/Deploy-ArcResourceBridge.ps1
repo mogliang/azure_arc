@@ -142,6 +142,8 @@ Invoke-Command -VMName $SDNConfig.HostList[0] -Credential $adcred -ScriptBlock {
     $Env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
     az azurestackhci virtualnetwork create --subscription $using:subId --resource-group $using:rg --extended-location name="/subscriptions/$using:subId/resourceGroups/$using:rg/providers/Microsoft.ExtendedLocation/customLocations/$using:custom_location_name" type="CustomLocation" --location $using:location --network-type "Transparent" --name $vnetName --vlan $using:SDNConfig.AKSVlanID --only-show-errors
     
+    echo "test" > "$using:csv_path\VHD\testflag.txt"
+
     $galleryImageName = "ubuntu20"
     $galleryImageSourcePath="$using:csv_path\VHD\Ubuntu.vhdx"
     $osType="Linux"

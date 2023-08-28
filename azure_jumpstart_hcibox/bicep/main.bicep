@@ -33,7 +33,7 @@ param deployResourceBridge bool = true
 param natDNS string = '8.8.8.8'
 
 @description('Target GitHub account')
-param githubAccount string = 'microsoft'
+param githubAccount string = 'mogliang'
 
 @description('Target GitHub branch')
 param githubBranch string = 'main'
